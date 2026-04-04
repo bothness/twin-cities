@@ -58,8 +58,8 @@
   <nav id="mode-box">
     <label>
       <select bind:value={mode}>
-        <option value="network">View as network</option>
-        <option value="map">View as map</option>
+        <option value="network">Network view</option>
+        <option value="map">Map view</option>
       </select>
     </label>
   </nav>
@@ -81,6 +81,7 @@
     position: absolute;
     top: 10px;
     left: 10px;
+    max-width: calc(100% - 100px);
   }
   #mode-box {
     position: absolute;

@@ -226,6 +226,8 @@
     position: absolute;
     bottom: 10px;
     right: 10px;
+    max-width: calc(100% - 160px);
+    text-align: right;
     margin: 0;
     padding: 0;
   }

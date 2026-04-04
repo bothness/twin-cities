@@ -16,11 +16,11 @@
 a {
   font-weight: 500;
   color: white;
-  text-decoration: inherit;
+  text-decoration: underline;
   font-weight: bold;
 }
 a:hover {
-  color: white;
+  color: #ffb;
 }
 
 body {
@@ -36,6 +36,7 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
   color: white;
+  margin-bottom: 0;
 }
 
 .card {
@@ -65,6 +66,10 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+input {
+  margin-bottom: 3px !important;
 }
 
 select {
