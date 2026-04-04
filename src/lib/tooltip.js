@@ -35,6 +35,7 @@ export default function tooltip(element) {
     destroy() {
       element.removeEventListener("mouseover", mouseOver);
       element.removeEventListener("mouseleave", mouseLeave);
+      if (div?.isConnected) document.body.removeChild(div);
     },
   };
 }

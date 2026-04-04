@@ -1,16 +1,12 @@
 <script>
-  let { selected = [] } = $props();
-
-  async function bufferUpdate(bool, ms = 750) {
-    if (bool) return bool;
-    await new Promise((resolve) => setTimeout(resolve, ms))
-    return bool;
-  }
-
-  let hidden = $derived(await bufferUpdate(selected.length > 0));
+  export let selected = [];
 </script>
 
-<div class="intro" style:opacity={selected.length ? 0 : 1} style:visibility={hidden ? 'hidden' : 'visible'}>
+<div
+  class="intro"
+  style:opacity={selected.length ? 0 : 1}
+  style:pointer-events={selected.length ? "none" : "all"}
+>
   <div>
     <h1>Explore twin cities</h1>
     <p>
