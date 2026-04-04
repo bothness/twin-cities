@@ -20,7 +20,7 @@ export default function tooltip(element) {
 			top: ${event.pageX + 5}px;
 			left: ${event.pageY + 5}px;
 		`;
-        div.style.left = `${event.pageX + 5}px`;
+    div.style.left = `${event.pageX + 5}px`;
     div.style.top = `${event.pageY + 5}px`;
     document.body.appendChild(div);
   }

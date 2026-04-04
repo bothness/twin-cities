@@ -25,8 +25,12 @@
         href="https://bsky.app/profile/bothness.bsky.social"
         target="_blank">Ahmad Barclay</a
       >. If you're feeling a bit nerdy, you can download the data for this
-      visualisation in the form of nodes (cities) and edges (the connections
-      between them). You can also get the source code on Github.
+      visualisation in the form of <a href="./data/nodes.tsv">nodes</a> (cities)
+      and <a href="./data/links.tsv">edges</a> (the connections between them).
+      You can also get the
+      <a href="https://github.com/bothness/twin-cities" target="_blank"
+        >source code on Github</a
+      >.
     </p>
   </div>
 </div>

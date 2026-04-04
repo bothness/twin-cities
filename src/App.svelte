@@ -8,7 +8,7 @@
   const nodes_path = "./data/nodes.tsv";
   const links_path = "./data/links.tsv";
 
-  let selected = []
+  let selected = [];
   let mode = "network";
 
   let data;
@@ -33,10 +33,10 @@
 </script>
 
 <main>
-  <Intro {selected}/>
   {#if data}
     <ForceGraph links={data.links} nodes={data.nodes} {mode} bind:selected />
   {/if}
+  <Intro {selected} />
   <div id="select-box">
     {#if data}
       <Select
