@@ -46,7 +46,7 @@
     transition: opacity 0.75s;
   }
   .intro > div {
-    width: 600px;
+    width: 550px;
     max-width: calc(100% - 24px);
   }
 </style>

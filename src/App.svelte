@@ -9,7 +9,6 @@
   const links_path = "./data/links.tsv";
 
   let selected = [];
-  let mode = "network";
 
   let data;
 
@@ -34,7 +33,7 @@
 
 <main>
   {#if data}
-    <ForceGraph links={data.links} nodes={data.nodes} {mode} bind:selected />
+    <ForceGraph links={data.links} nodes={data.nodes} bind:selected />
   {/if}
   <Intro {selected} />
   <div id="select-box">
@@ -55,14 +54,6 @@
       <button on:click={() => (selected = [])}>Reset</button>
     {/if}
   </div>
-  <nav id="mode-box">
-    <label>
-      <select bind:value={mode}>
-        <option value="network">Network view</option>
-        <option value="map">Map view</option>
-      </select>
-    </label>
-  </nav>
 </main>
 
 <style>
@@ -82,10 +73,5 @@
     top: 10px;
     left: 10px;
     max-width: calc(100% - 100px);
-  }
-  #mode-box {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
   }
 </style>

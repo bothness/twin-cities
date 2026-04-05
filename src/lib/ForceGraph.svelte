@@ -22,13 +22,13 @@
   export let nodes;
   export let links;
   export let selected;
-  export let mode = "network";
 
   let width = 400;
   let height = 400;
   let mounted = false;
   let svg, doZoom, transform, simulation;
 
+  let mode = "network";
   let _selected = [];
   let _nodes, _links, _ids, _geojson;
 
@@ -197,30 +197,45 @@
     </g>
   </g>
 </svg>
-<nav id="top-nav">
-  <button on:click={() => doZoom(2)}>&plus;</button>
-  <button on:click={() => doZoom(0.5)}>&minus;</button>
-</nav>
-<ul id="legend">
-  {#each _domain as item, i}
-    <li>
-      <span
-        class="bullet bullet-left"
-        style:background={schemePaired[_range[i] + 1]}
-      ></span><span
-        class="bullet bullet-right"
-        style:background={schemePaired[_range[i]]}
-      ></span>
-      {item}
-    </li>
-  {/each}
-</ul>
+{#if selected.length}
+  <nav id="top-nav">
+    <button on:click={() => doZoom(2)}>&plus;</button>
+    <button on:click={() => doZoom(0.5)}>&minus;</button>
+  </nav>
+  <nav id="mode-box">
+    <label>
+      <select bind:value={mode}>
+        <option value="network">Network view</option>
+        <option value="map">Map view</option>
+      </select>
+    </label>
+  </nav>
+  <ul id="legend">
+    {#each _domain as item, i}
+      <li>
+        <span
+          class="bullet bullet-left"
+          style:background={schemePaired[_range[i] + 1]}
+        ></span><span
+          class="bullet bullet-right"
+          style:background={schemePaired[_range[i]]}
+        ></span>
+        {item}
+      </li>
+    {/each}
+  </ul>
+{/if}
 
 <style>
   nav#top-nav {
     position: absolute;
     top: 10px;
     right: 10px;
+  }
+  #mode-box {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
   }
   #legend {
     position: absolute;
